@@ -1,0 +1,29 @@
+///////////////
+Widget drawer() => AnimatedPositioned(
+    duration: const Duration(milliseconds: 250),
+    curve: Curves.easeIn,
+    top: 0,
+    bottom: 0,
+    left: _isDrawerOpen ? 0 : -(MediaQuery.of(context).size.width / 3) * 2,
+    child: Container(
+        width: (MediaQuery.of(context).size.width / 3) * 2,
+        height: double.infinity,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          boxShadow: <BoxShadow>[
+            BoxShadow(
+              color: Colors.black.withOpacity(0.3),
+              blurRadius: 5,
+            ),
+          ],
+        ),
+        child: GestureDetector(onTap: () {
+          setState(() {
+            _isDrawerOpen = false;
+          });
+        },child: Container(width: 10,height: 50,color: Colors.red,))
+    ),
+  );
+  ---------------------------------------
+  hiện thị trong stack đặt cuối
+  
